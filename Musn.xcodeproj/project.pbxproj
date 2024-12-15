@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5AE92BAE0574CA5E44EEB /* Pods_Musn.framework */; };
+		96A5E8C5051AE1B4E6808691 /* Pods_MusnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623A1D4EEC70F6BED4164380 /* Pods_MusnTests.framework */; };
+		EED83133FD56B17E0773A458 /* Pods_Musn_MusnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5BE41172D0E8AEB006AEEE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5BE40FE2D0E8AE9006AEEE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE41052D0E8AE9006AEEE6;
+			remoteInfo = Musn;
+		};
+		B5BE41212D0E8AEB006AEEE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5BE40FE2D0E8AE9006AEEE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE41052D0E8AE9006AEEE6;
+			remoteInfo = Musn;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2851E9D36E2BE772B4AF0CF9 /* Pods-MusnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusnTests.release.xcconfig"; path = "Target Support Files/Pods-MusnTests/Pods-MusnTests.release.xcconfig"; sourceTree = "<group>"; };
+		2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musn_MusnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		310721B380441839F14D5455 /* Pods-Musn-MusnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musn-MusnUITests.debug.xcconfig"; path = "Target Support Files/Pods-Musn-MusnUITests/Pods-Musn-MusnUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		43C036CA73BCC0470824391E /* Pods-Musn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musn.debug.xcconfig"; path = "Target Support Files/Pods-Musn/Pods-Musn.debug.xcconfig"; sourceTree = "<group>"; };
+		57DF3EB758B57892350E2D69 /* Pods-Musn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musn.release.xcconfig"; path = "Target Support Files/Pods-Musn/Pods-Musn.release.xcconfig"; sourceTree = "<group>"; };
+		5DD5AE92BAE0574CA5E44EEB /* Pods_Musn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		623A1D4EEC70F6BED4164380 /* Pods_MusnTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusnTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EDC3969243EFE4ACCAC053A /* Pods-Musn-MusnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musn-MusnUITests.release.xcconfig"; path = "Target Support Files/Pods-Musn-MusnUITests/Pods-Musn-MusnUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5BE41062D0E8AE9006AEEE6 /* Musn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE41162D0E8AEB006AEEE6 /* MusnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE41202D0E8AEB006AEEE6 /* MusnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F502D16F715D84F0781280 /* Pods-MusnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusnTests.debug.xcconfig"; path = "Target Support Files/Pods-MusnTests/Pods-MusnTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B5BE41082D0E8AE9006AEEE6 /* Musn */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Musn;
+			sourceTree = "<group>";
+		};
+		B5BE41192D0E8AEB006AEEE6 /* MusnTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = MusnTests;
+			sourceTree = "<group>";
+		};
+		B5BE41232D0E8AEB006AEEE6 /* MusnUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = MusnUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5BE41032D0E8AE9006AEEE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE41132D0E8AEB006AEEE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A5E8C5051AE1B4E6808691 /* Pods_MusnTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE411D2D0E8AEB006AEEE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED83133FD56B17E0773A458 /* Pods_Musn_MusnUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D79A064890DCD01A863FE30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DD5AE92BAE0574CA5E44EEB /* Pods_Musn.framework */,
+				2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */,
+				623A1D4EEC70F6BED4164380 /* Pods_MusnTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5BE40FD2D0E8AE9006AEEE6 = {
+			isa = PBXGroup;
+			children = (
+				B5BE41082D0E8AE9006AEEE6 /* Musn */,
+				B5BE41192D0E8AEB006AEEE6 /* MusnTests */,
+				B5BE41232D0E8AEB006AEEE6 /* MusnUITests */,
+				B5BE41072D0E8AE9006AEEE6 /* Products */,
+				CFC268D5C5BF223658AF141E /* Pods */,
+				3D79A064890DCD01A863FE30 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5BE41072D0E8AE9006AEEE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE41062D0E8AE9006AEEE6 /* Musn.app */,
+				B5BE41162D0E8AEB006AEEE6 /* MusnTests.xctest */,
+				B5BE41202D0E8AEB006AEEE6 /* MusnUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFC268D5C5BF223658AF141E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43C036CA73BCC0470824391E /* Pods-Musn.debug.xcconfig */,
+				57DF3EB758B57892350E2D69 /* Pods-Musn.release.xcconfig */,
+				310721B380441839F14D5455 /* Pods-Musn-MusnUITests.debug.xcconfig */,
+				7EDC3969243EFE4ACCAC053A /* Pods-Musn-MusnUITests.release.xcconfig */,
+				E1F502D16F715D84F0781280 /* Pods-MusnTests.debug.xcconfig */,
+				2851E9D36E2BE772B4AF0CF9 /* Pods-MusnTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5BE41052D0E8AE9006AEEE6 /* Musn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE412A2D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "Musn" */;
+			buildPhases = (
+				E11DBCE331B269CBA8E0CEDA /* [CP] Check Pods Manifest.lock */,
+				B5BE41022D0E8AE9006AEEE6 /* Sources */,
+				B5BE41032D0E8AE9006AEEE6 /* Frameworks */,
+				B5BE41042D0E8AE9006AEEE6 /* Resources */,
+				F219FDF250C899107ECE6DF5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B5BE41082D0E8AE9006AEEE6 /* Musn */,
+			);
+			name = Musn;
+			productName = Musn;
+			productReference = B5BE41062D0E8AE9006AEEE6 /* Musn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5BE41152D0E8AEB006AEEE6 /* MusnTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE412D2D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "MusnTests" */;
+			buildPhases = (
+				5C50843B49ADE3FB5D3C214D /* [CP] Check Pods Manifest.lock */,
+				B5BE41122D0E8AEB006AEEE6 /* Sources */,
+				B5BE41132D0E8AEB006AEEE6 /* Frameworks */,
+				B5BE41142D0E8AEB006AEEE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE41182D0E8AEB006AEEE6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B5BE41192D0E8AEB006AEEE6 /* MusnTests */,
+			);
+			name = MusnTests;
+			productName = MusnTests;
+			productReference = B5BE41162D0E8AEB006AEEE6 /* MusnTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5BE411F2D0E8AEB006AEEE6 /* MusnUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE41302D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "MusnUITests" */;
+			buildPhases = (
+				8A6370487E412F1EC02265AA /* [CP] Check Pods Manifest.lock */,
+				B5BE411C2D0E8AEB006AEEE6 /* Sources */,
+				B5BE411D2D0E8AEB006AEEE6 /* Frameworks */,
+				B5BE411E2D0E8AEB006AEEE6 /* Resources */,
+				BDCD8581FBF240473C144066 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE41222D0E8AEB006AEEE6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B5BE41232D0E8AEB006AEEE6 /* MusnUITests */,
+			);
+			name = MusnUITests;
+			productName = MusnUITests;
+			productReference = B5BE41202D0E8AEB006AEEE6 /* MusnUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5BE40FE2D0E8AE9006AEEE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					B5BE41052D0E8AE9006AEEE6 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					B5BE41152D0E8AEB006AEEE6 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B5BE41052D0E8AE9006AEEE6;
+					};
+					B5BE411F2D0E8AEB006AEEE6 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B5BE41052D0E8AE9006AEEE6;
+					};
+				};
+			};
+			buildConfigurationList = B5BE41012D0E8AE9006AEEE6 /* Build configuration list for PBXProject "Musn" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5BE40FD2D0E8AE9006AEEE6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B5BE41072D0E8AE9006AEEE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5BE41052D0E8AE9006AEEE6 /* Musn */,
+				B5BE41152D0E8AEB006AEEE6 /* MusnTests */,
+				B5BE411F2D0E8AEB006AEEE6 /* MusnUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5BE41042D0E8AE9006AEEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE41142D0E8AEB006AEEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE411E2D0E8AEB006AEEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C50843B49ADE3FB5D3C214D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusnTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6370487E412F1EC02265AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musn-MusnUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDCD8581FBF240473C144066 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musn-MusnUITests/Pods-Musn-MusnUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musn-MusnUITests/Pods-Musn-MusnUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Musn-MusnUITests/Pods-Musn-MusnUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E11DBCE331B269CBA8E0CEDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F219FDF250C899107ECE6DF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musn/Pods-Musn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musn/Pods-Musn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Musn/Pods-Musn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5BE41022D0E8AE9006AEEE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE41122D0E8AEB006AEEE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE411C2D0E8AEB006AEEE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5BE41182D0E8AEB006AEEE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE41052D0E8AE9006AEEE6 /* Musn */;
+			targetProxy = B5BE41172D0E8AEB006AEEE6 /* PBXContainerItemProxy */;
+		};
+		B5BE41222D0E8AEB006AEEE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE41052D0E8AE9006AEEE6 /* Musn */;
+			targetProxy = B5BE41212D0E8AEB006AEEE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B5BE41282D0E8AEB006AEEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5BE41292D0E8AEB006AEEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5BE412B2D0E8AEB006AEEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43C036CA73BCC0470824391E /* Pods-Musn.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Musn/Preview Content\"";
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.Musn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5BE412C2D0E8AEB006AEEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DF3EB758B57892350E2D69 /* Pods-Musn.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Musn/Preview Content\"";
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.Musn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5BE412E2D0E8AEB006AEEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1F502D16F715D84F0781280 /* Pods-MusnTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.MusnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Musn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Musn";
+			};
+			name = Debug;
+		};
+		B5BE412F2D0E8AEB006AEEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2851E9D36E2BE772B4AF0CF9 /* Pods-MusnTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.MusnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Musn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Musn";
+			};
+			name = Release;
+		};
+		B5BE41312D0E8AEB006AEEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310721B380441839F14D5455 /* Pods-Musn-MusnUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.MusnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Musn;
+			};
+			name = Debug;
+		};
+		B5BE41322D0E8AEB006AEEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EDC3969243EFE4ACCAC053A /* Pods-Musn-MusnUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minjae.MusnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Musn;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5BE41012D0E8AE9006AEEE6 /* Build configuration list for PBXProject "Musn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE41282D0E8AEB006AEEE6 /* Debug */,
+				B5BE41292D0E8AEB006AEEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE412A2D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "Musn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE412B2D0E8AEB006AEEE6 /* Debug */,
+				B5BE412C2D0E8AEB006AEEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE412D2D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "MusnTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE412E2D0E8AEB006AEEE6 /* Debug */,
+				B5BE412F2D0E8AEB006AEEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE41302D0E8AEB006AEEE6 /* Build configuration list for PBXNativeTarget "MusnUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE41312D0E8AEB006AEEE6 /* Debug */,
+				B5BE41322D0E8AEB006AEEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5BE40FE2D0E8AE9006AEEE6 /* Project object */;
+}
