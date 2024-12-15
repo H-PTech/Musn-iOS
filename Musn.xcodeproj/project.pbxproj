@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5AE92BAE0574CA5E44EEB /* Pods_Musn.framework */; };
 		96A5E8C5051AE1B4E6808691 /* Pods_MusnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623A1D4EEC70F6BED4164380 /* Pods_MusnTests.framework */; };
+		B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */; };
+		B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE41702D0F2BEA006AEEE6 /* Moya */; };
 		EED83133FD56B17E0773A458 /* Pods_Musn_MusnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */,
 				518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */,
+				B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +254,9 @@
 			);
 			mainGroup = B5BE40FD2D0E8AE9006AEEE6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B5BE41072D0E8AE9006AEEE6 /* Products */;
 			projectDirPath = "";
@@ -724,6 +731,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		B5BE41702D0F2BEA006AEEE6 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5BE40FE2D0E8AE9006AEEE6 /* Project object */;
 }
