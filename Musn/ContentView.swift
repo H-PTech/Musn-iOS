@@ -7,18 +7,36 @@
 
 import SwiftUI
 
+enum Tab {
+    case home
+    case profile
+}
+
+
 struct ContentView: View {
+    
+    @State private var selectedTab: Tab = .home
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            switch selectedTab {
+            case .home:
+                NavigationView {
+                    HomeView()
+                }
+            case .profile:
+                NavigationView {
+                    ProfileView()
+                }
+            }
+            CustomTabView(selectedTab: $selectedTab)
+                .frame(height: 50)
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }

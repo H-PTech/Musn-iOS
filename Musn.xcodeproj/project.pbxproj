@@ -44,25 +44,32 @@
 		E1F502D16F715D84F0781280 /* Pods-MusnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusnTests.debug.xcconfig"; path = "Target Support Files/Pods-MusnTests/Pods-MusnTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B5BE41612D0F1CCF006AEEE6 /* Exceptions for "Musn" folder in "Musn" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5BE41052D0E8AE9006AEEE6 /* Musn */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B5BE41082D0E8AE9006AEEE6 /* Musn */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				B5BE41612D0F1CCF006AEEE6 /* Exceptions for "Musn" folder in "Musn" target */,
 			);
 			path = Musn;
 			sourceTree = "<group>";
 		};
 		B5BE41192D0E8AEB006AEEE6 /* MusnTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = MusnTests;
 			sourceTree = "<group>";
 		};
 		B5BE41232D0E8AEB006AEEE6 /* MusnUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = MusnUITests;
 			sourceTree = "<group>";
 		};
@@ -138,7 +145,6 @@
 				E1F502D16F715D84F0781280 /* Pods-MusnTests.debug.xcconfig */,
 				2851E9D36E2BE772B4AF0CF9 /* Pods-MusnTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -458,7 +464,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -521,7 +527,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -552,6 +558,7 @@
 				DEVELOPMENT_TEAM = AU24ZRJ649;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Musn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -582,6 +589,7 @@
 				DEVELOPMENT_TEAM = AU24ZRJ649;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Musn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
