@@ -8,12 +8,12 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var selectedTab: Tab
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             HStack {
                 Spacer()
-                
+
                 Button {
                     selectedTab = .home
                 } label: {
@@ -22,24 +22,24 @@ struct CustomTabView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
-                            .foregroundStyle(selectedTab == .home ? .blue : .gray)
+                            .foregroundStyle(selectedTab == .home ? .green : .gray)
                         Text("Home")
                             .font(.caption)
-                            .foregroundStyle(selectedTab == .home ? .blue : .gray)
+                            .foregroundStyle(selectedTab == .home ? .green : .gray)
                     }
                 }
-                
+
                 Spacer()
-                
+
                 Button {
 
                 } label: {
                     ZStack {
                         Circle()
-                            .foregroundStyle(Color.blue.opacity(0.8))
+                            .foregroundStyle(Color.green.opacity(0.8))
                             .frame(width: 70, height: 70)
-                            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 3)
-                        Image(systemName: "plus")
+                            .shadow(color: .green.opacity(0.5), radius: 10, x: 0, y: 3)
+                        Image(systemName: "music.note")
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(.white)
@@ -47,9 +47,9 @@ struct CustomTabView: View {
                     }
                     .offset(y: -20)
                 }
-                
+
                 Spacer()
-                
+
                 Button {
                     selectedTab = .profile
                 } label: {
@@ -58,13 +58,13 @@ struct CustomTabView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
-                            .foregroundStyle(selectedTab == .profile ? .blue : .gray)
+                            .foregroundStyle(selectedTab == .profile ? .green : .gray)
                         Text("Profile")
                             .font(.caption)
-                            .foregroundStyle(selectedTab == .profile ? .blue : .gray)
+                            .foregroundStyle(selectedTab == .profile ? .green : .gray)
                     }
                 }
-                
+
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -85,5 +85,5 @@ struct CustomTabView: View {
         CustomTabView(selectedTab: .constant(.home))
     }
     .background(Color.black)
-    .preferredColorScheme(.dark) 
+    .preferredColorScheme(.dark)
 }

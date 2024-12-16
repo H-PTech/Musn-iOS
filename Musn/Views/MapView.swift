@@ -13,7 +13,7 @@ struct MapView: UIViewRepresentable {
         let mapView = NMFMapView(frame: .zero)
         mapView.positionMode = .normal
         mapView.isNightModeEnabled = true
-        mapView.mapType = .basic
+        mapView.mapType = .navi
         return mapView
     }
 

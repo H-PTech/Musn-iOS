@@ -11,6 +11,7 @@ struct HomeView: View {
     var body: some View {
         MapView()
             .ignoresSafeArea(.all)
+    
     }
 }
 

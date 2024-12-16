@@ -27,7 +27,7 @@ struct ContentView: View {
                 }
             case .profile:
                 NavigationView {
-                    ProfileView()
+                    ReelsPagingView()
                 }
             }
             CustomTabView(selectedTab: $selectedTab)
