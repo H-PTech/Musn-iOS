@@ -8,12 +8,10 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var selectedTab: Tab
-
     var body: some View {
         ZStack(alignment: .bottom) {
             HStack {
                 Spacer()
-
                 Button {
                     selectedTab = .home
                 } label: {
@@ -28,10 +26,9 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .home ? .green : .gray)
                     }
                 }
-
                 Spacer()
-
                 Button {
+                    selectedTab = .search
 
                 } label: {
                     ZStack {
@@ -47,24 +44,22 @@ struct CustomTabView: View {
                     }
                     .offset(y: -20)
                 }
-
                 Spacer()
 
                 Button {
                     selectedTab = .profile
                 } label: {
                     VStack {
-                        Image(systemName: "person.fill")
+                        Image(systemName: "video.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
                             .foregroundStyle(selectedTab == .profile ? .green : .gray)
-                        Text("Profile")
+                        Text("Video")
                             .font(.caption)
                             .foregroundStyle(selectedTab == .profile ? .green : .gray)
                     }
                 }
-
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -78,7 +73,6 @@ struct CustomTabView: View {
         }
     }
 }
-
 #Preview {
     VStack {
         Spacer()

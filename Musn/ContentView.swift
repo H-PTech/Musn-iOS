@@ -10,6 +10,7 @@ import SwiftUI
 enum Tab {
     case home
     case profile
+    case search
 }
 
 
@@ -28,6 +29,10 @@ struct ContentView: View {
             case .profile:
                 NavigationView {
                     ReelsPagingView()
+                }
+            case .search:
+                NavigationView {
+                    SearchView()
                 }
             }
             CustomTabView(selectedTab: $selectedTab)
