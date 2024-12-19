@@ -8,10 +8,14 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var selectedTab: Tab
+    @State private var isExpanded = false
+
     var body: some View {
         ZStack(alignment: .bottom) {
             HStack {
                 Spacer()
+
+                // Home Button
                 Button {
                     selectedTab = .home
                 } label: {
@@ -26,26 +30,73 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .home ? .green : .gray)
                     }
                 }
-                Spacer()
-                Button {
-                    selectedTab = .search
 
-                } label: {
-                    ZStack {
-                        Circle()
-                            .foregroundStyle(Color.green.opacity(0.8))
-                            .frame(width: 70, height: 70)
-                            .shadow(color: .green.opacity(0.5), radius: 10, x: 0, y: 3)
-                        Image(systemName: "music.note")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
+                Spacer()
+
+                ZStack {
+                    if isExpanded {
+                        // Music Button
+                        Button {
+                            // Handle Music Action
+                            isExpanded = false
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.green)
+                                Image(systemName: "music.note")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(.white)
+                                    .frame(width: 20, height: 20)
+                            }
+                            .offset(x: -70, y: -70)
+                        }
+
+                        // Video Button
+                        Button {
+                            // Handle Video Action
+                            isExpanded = false
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.green)
+                                Image(systemName: "video.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundColor(.white)
+                                    .frame(width: 20, height: 20)
+                            }
+                            .offset(x: 70, y: -70)
+                        }
                     }
-                    .offset(y: -20)
+
+                    // Plus Button with rotation effect
+                    Button {
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
+                            isExpanded.toggle()
+                        }
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(Color.green.opacity(0.8))
+                                .frame(width: 70, height: 70)
+                                .shadow(color: .green.opacity(0.5), radius: 10, x: 0, y: 3)
+                            Image(systemName: "plus")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .rotationEffect(.degrees(isExpanded ? 45 : 0)) // Rotate when expanded
+                        }
+                        .offset(y: -20)
+                    }
                 }
+
                 Spacer()
 
+                // Profile Button
                 Button {
                     selectedTab = .profile
                 } label: {
@@ -60,6 +111,7 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .profile ? .green : .gray)
                     }
                 }
+
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -73,6 +125,7 @@ struct CustomTabView: View {
         }
     }
 }
+
 #Preview {
     VStack {
         Spacer()

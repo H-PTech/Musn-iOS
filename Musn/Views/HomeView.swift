@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var locationManager = LocationManager()
     var body: some View {
-        MapView()
-            .ignoresSafeArea(.all)
+        MapContainerView()
     
     }
 }

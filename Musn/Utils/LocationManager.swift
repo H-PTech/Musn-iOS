@@ -7,21 +7,59 @@
 import CoreLocation
 import Combine
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, ObservableObject {
     private let manager = CLLocationManager()
+    private let geocoder = CLGeocoder()
+    
+    @Published var currentAddress: String = "Fetching..."
+    @Published var location: CLLocation?
+    @Published var error: Error?
+    
+    // 위치 업데이트를 전달하는 클로저
     var onLocationUpdate: ((CLLocation) -> Void)?
 
-    override init() {
+    private var isOneTimeUpdate: Bool
+    
+    init(isOneTimeUpdate: Bool = true, accuracy: CLLocationAccuracy = kCLLocationAccuracyBest) {
+        self.isOneTimeUpdate = isOneTimeUpdate
         super.init()
+        
         manager.delegate = self
+        manager.desiredAccuracy = accuracy
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
     }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            onLocationUpdate?(location)
-            manager.stopUpdatingLocation() // 위치 업데이트를 한 번만 받도록 설정
+    
+    private func fetchAddress(from location: CLLocation) {
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let placemark = placemarks?.first {
+                DispatchQueue.main.async {
+                    self.currentAddress = "\(placemark.subLocality ?? "Unknown") \(placemark.thoroughfare ?? "Unknown")"
+                }
+            } else {
+                self.currentAddress = "Address unavailable"
+            }
         }
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let newLocation = locations.last else { return }
+        self.location = newLocation
+        fetchAddress(from: newLocation)
+        
+        // 클로저 호출
+        onLocationUpdate?(newLocation)
+        
+        if isOneTimeUpdate {
+            manager.stopUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.error = error
+        self.currentAddress = "Location error"
+        print("Location update failed with error: \(error.localizedDescription)")
     }
 }

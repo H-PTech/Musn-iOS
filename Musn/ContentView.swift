@@ -15,31 +15,36 @@ enum Tab {
 
 
 struct ContentView: View {
-    
     @State private var selectedTab: Tab = .home
-    
-    
+    @StateObject private var locationManager = LocationManager()
+
     var body: some View {
         VStack {
             switch selectedTab {
             case .home:
                 NavigationView {
                     HomeView()
+                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
                 }
             case .profile:
                 NavigationView {
                     ReelsPagingView()
+                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
                 }
             case .search:
                 NavigationView {
                     SearchView()
+                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
                 }
             }
+
             CustomTabView(selectedTab: $selectedTab)
                 .frame(height: 50)
         }
+        .environmentObject(locationManager) 
     }
 }
+
 
 #Preview {
     ContentView()
