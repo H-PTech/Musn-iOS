@@ -15,7 +15,6 @@ struct CustomTabView: View {
             HStack {
                 Spacer()
 
-                // Home Button
                 Button {
                     selectedTab = .home
                 } label: {
@@ -30,14 +29,12 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .home ? .green : .gray)
                     }
                 }
-
                 Spacer()
 
                 ZStack {
                     if isExpanded {
-                        // Music Button
                         Button {
-                            // Handle Music Action
+                            selectedTab = .search // search로 이동
                             isExpanded = false
                         } label: {
                             ZStack {
@@ -53,9 +50,7 @@ struct CustomTabView: View {
                             .offset(x: -70, y: -70)
                         }
 
-                        // Video Button
                         Button {
-                            // Handle Video Action
                             isExpanded = false
                         } label: {
                             ZStack {
@@ -72,7 +67,6 @@ struct CustomTabView: View {
                         }
                     }
 
-                    // Plus Button with rotation effect
                     Button {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                             isExpanded.toggle()
@@ -88,15 +82,13 @@ struct CustomTabView: View {
                                 .scaledToFit()
                                 .foregroundColor(.white)
                                 .frame(width: 30, height: 30)
-                                .rotationEffect(.degrees(isExpanded ? 45 : 0)) // Rotate when expanded
+                                .rotationEffect(.degrees(isExpanded ? 45 : 0))
                         }
                         .offset(y: -20)
                     }
                 }
 
                 Spacer()
-
-                // Profile Button
                 Button {
                     selectedTab = .profile
                 } label: {
@@ -111,7 +103,6 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .profile ? .green : .gray)
                     }
                 }
-
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -127,10 +118,12 @@ struct CustomTabView: View {
 }
 
 #Preview {
-    VStack {
-        Spacer()
-        CustomTabView(selectedTab: .constant(.home))
+    NavigationStack {
+        VStack {
+            Spacer()
+            CustomTabView(selectedTab: .constant(.home))
+        }
+        .background(Color.black)
+        .preferredColorScheme(.dark)
     }
-    .background(Color.black)
-    .preferredColorScheme(.dark)
 }

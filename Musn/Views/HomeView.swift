@@ -11,7 +11,6 @@ struct HomeView: View {
     @StateObject private var locationManager = LocationManager()
     var body: some View {
         MapContainerView()
-    
     }
 }
 

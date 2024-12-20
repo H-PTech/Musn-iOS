@@ -19,29 +19,23 @@ struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
 
     var body: some View {
-        VStack {
-            switch selectedTab {
-            case .home:
-                NavigationView {
+        NavigationStack {
+            VStack {
+                switch selectedTab {
+                case .home:
                     HomeView()
                         .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
-                }
-            case .profile:
-                NavigationView {
+                case .profile:
                     ReelsPagingView()
-                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
-                }
-            case .search:
-                NavigationView {
+                case .search:
                     SearchView()
-                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
                 }
-            }
 
-            CustomTabView(selectedTab: $selectedTab)
-                .frame(height: 50)
+                CustomTabView(selectedTab: $selectedTab)
+                    .frame(height: 50)
+            }
         }
-        .environmentObject(locationManager) 
+        .environmentObject(locationManager)
     }
 }
 

@@ -4,7 +4,10 @@
 target 'Musn' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'NMapsMap' 
+  pod 'NMapsMap'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   # Pods for Musn
 
   target 'MusnTests' do
