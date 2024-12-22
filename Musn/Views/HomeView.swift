@@ -9,10 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var locationManager = LocationManager()
+    
     var body: some View {
         MapContainerView()
+            .navigationTitle(locationManager.currentAddress)
     }
+    
 }
+
+// 버튼 데이터 모델
+
 
 #Preview {
     HomeView()

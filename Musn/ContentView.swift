@@ -24,7 +24,6 @@ struct ContentView: View {
                 switch selectedTab {
                 case .home:
                     HomeView()
-                        .navigationBarTitle(locationManager.currentAddress, displayMode: .inline)
                 case .profile:
                     ReelsPagingView()
                 case .search:

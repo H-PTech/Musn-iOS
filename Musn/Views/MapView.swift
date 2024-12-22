@@ -71,6 +71,7 @@ struct MapContainerView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
+                Spacer()
                 HStack {
                     Spacer()
 
@@ -90,9 +91,9 @@ struct MapContainerView: View {
                     }
                     .padding(.trailing, 16)
                 }
-                .padding(.top, 16)
+                .padding(.bottom, 25)
 
-                Spacer()
+               
             }
         }
     }
