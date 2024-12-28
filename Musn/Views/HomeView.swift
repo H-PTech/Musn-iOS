@@ -13,6 +13,7 @@ struct HomeView: View {
     var body: some View {
         MapContainerView()
             .navigationTitle(locationManager.currentAddress)
+            .navigationBarTitleDisplayMode(.inline)
     }
     
 }

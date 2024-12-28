@@ -81,9 +81,9 @@ struct MapContainerView: View {
                             locationManager.onLocationUpdate?(userLocation)
                         }
                     }) {
-                        Image(systemName: "location.fill")
+                        Image("mylocation")
                             .resizable()
-                            .frame(width: 10, height: 10)
+                            .frame(width: 20, height: 20)
                             .padding()
                             .background(Color.white)
                             .clipShape(Circle())

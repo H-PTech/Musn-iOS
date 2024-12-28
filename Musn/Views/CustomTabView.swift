@@ -6,9 +6,16 @@
 //
 import SwiftUI
 
+enum Tab {
+    case home
+    case video
+    case dropMusic
+    case dropVideo
+}
+
 extension ShapeStyle where Self == Color {
-    static var tonedDownMint: Color {
-        Color(red: 0.70, green: 0.62, blue: 0.86) // 톤다운 민트 색상 정의
+    static var neonGreen: Color {
+        Color.green.opacity(0.95)
     }
 }
 
@@ -18,11 +25,13 @@ struct CustomTabView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
+            // 탭 바 아이템들
             HStack {
                 Spacer()
 
                 // Home Button
                 Button {
+                    print("Home tapped")
                     selectedTab = .home
                 } label: {
                     VStack {
@@ -30,122 +39,118 @@ struct CustomTabView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
-                            .foregroundStyle(selectedTab == .home ? .tonedDownMint : .gray)
+                            .foregroundStyle(selectedTab == .home ? .neonGreen : .white)
                         Text("Home")
                             .font(.caption)
-                            .foregroundStyle(selectedTab == .home ? .tonedDownMint : .gray)
-                    }
-                }
-                Spacer()
-
-                ZStack {
-                    if isExpanded {
-                        // Music Button
-                        Button {
-                            print("Music tapped")
-                            selectedTab = .search
-                            isExpanded = false
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundStyle(.tonedDownMint)
-                                Image(systemName: "music.note")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(width: 20, height: 20)
-                            }
-                            .offset(x: -70, y: -70)
-                            .zIndex(2)
-                            .contentShape(Circle())
-                        }
-
-                        // Video Button
-                        Button {
-                            print("Video tapped")
-                            selectedTab = .profile
-                            isExpanded = false
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundStyle(.tonedDownMint)
-                                Image(systemName: "video.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(width: 20, height: 20)
-                            }
-                            .offset(x: 70, y: -70)
-                            .zIndex(2)
-                            .contentShape(Circle())
-                        }
-                    }
-
-                    // Floating Action Button
-                    Button {
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
-                            isExpanded.toggle()
-                        }
-                    } label: {
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(.tonedDownMint.opacity(0.8))
-                                .frame(width: 70, height: 70)
-                                .shadow(color: .tonedDownMint.opacity(0.5), radius: 10, x: 0, y: 3)
-                            Image(systemName: "plus")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundColor(.white)
-                                .frame(width: 30, height: 30)
-                                .rotationEffect(.degrees(isExpanded ? 45 : 0))
-                        }
-                        .offset(y: -20)
-                        .zIndex(3) // Always on top
-                        .contentShape(Circle()) // Ensure touch area matches visual
+                            .foregroundStyle(selectedTab == .home ? .neonGreen : .white)
                     }
                 }
 
                 Spacer()
 
-                // Profile Button
+                // 플로팅 버튼의 자리 확보
+                Spacer()
+
+                // Video Button
                 Button {
-                    selectedTab = .profile
+                    print("Video tab tapped")
+                    selectedTab = .video
                 } label: {
                     VStack {
                         Image(systemName: "video.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
-                            .foregroundStyle(selectedTab == .profile ? .tonedDownMint : .gray)
+                            .foregroundStyle(selectedTab == .video ? .neonGreen : .white)
                         Text("Video")
                             .font(.caption)
-                            .foregroundStyle(selectedTab == .profile ? .tonedDownMint : .gray)
+                            .foregroundStyle(selectedTab == .video ? .neonGreen : .white)
                     }
                 }
+
                 Spacer()
             }
             .padding(.bottom, 10)
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.black.opacity(0.7))
+                    .fill(Color.black.opacity(0.8))
                     .ignoresSafeArea(edges: .bottom)
             )
-            .shadow(color: .black.opacity(0.5), radius: 5, x: 0, y: -3)
-        }
-    }
-}
+            .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: -3)
 
+            // 플로팅 버튼과 확장 버튼
+            ZStack {
+                if isExpanded {
+                    // Music Button
+                    Button {
+                        print("Music tapped")
+                        selectedTab = .dropMusic
+                        withAnimation {
+                            isExpanded = false
+                        }
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.neonGreen)
+                                .shadow(color: .neonGreen.opacity(0.6), radius: 10, x: 0, y: 3)
+                            Image(systemName: "music.note")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.white)
+                                .frame(width: 20, height: 20)
+                        }
+                    }
+                    .offset(x: -70, y: -70)
 
-#Preview {
-    NavigationStack {
-        VStack {
-            Spacer()
-            CustomTabView(selectedTab: .constant(.home))
+                    // Video Button
+                    Button {
+                        print("Video tapped")
+                        selectedTab = .dropVideo
+                        withAnimation {
+                            isExpanded = false
+                        }
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.neonGreen)
+                                .shadow(color: .neonGreen.opacity(0.6), radius: 10, x: 0, y: 3)
+                            Image(systemName: "video.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(.white)
+                                .frame(width: 20, height: 20)
+                        }
+                    }
+                    .offset(x: 70, y: -70)
+                }
+
+                // 플로팅 메인 버튼
+                Button {
+                    withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
+                        isExpanded.toggle()
+                    }
+                } label: {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.neonGreen)
+                            .frame(width: 70, height: 70)
+                            .shadow(color: .neonGreen.opacity(0.8), radius: 15, x: 0, y: 5)
+
+                        // 자연스러운 애니메이션
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .rotationEffect(.degrees(isExpanded ? 135 : 0)) // +에서 x로 변경
+                            .animation(.easeInOut(duration: 0.3), value: isExpanded)
+                    }
+                    .offset(y: -20)
+                }
+            }
         }
-        .background(Color.black)
-        .preferredColorScheme(.dark)
     }
 }

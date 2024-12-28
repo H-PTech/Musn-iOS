@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NaverClientSecret</key>
+	<string>Dk90dPf57ykRXcJVC3VIsBmUneASHag6oYQtoYFj</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>이 앱은 Apple Music 데이터를 검색 및 활용하기 위해 접근 권한이 필요합니다.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

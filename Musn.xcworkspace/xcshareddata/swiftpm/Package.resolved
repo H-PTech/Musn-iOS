@@ -1,5 +1,5 @@
 {
-  "originHash" : "8f916f5d4326b71e39effcaaa3b5d19d894467a03c60c9c5033a4bfc3cfd2d9c",
+  "originHash" : "c07bc5ea196d5176ff4a7df57eb3e8591ef99d4a2a0131a63b42ef83a5a5d58a",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,42 @@
       "state" : {
         "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
         "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "hero",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HeroTransitions/Hero",
+      "state" : {
+        "revision" : "b307e2d48d582118e5101d04f5187c91595a1095",
+        "version" : "1.6.3"
+      }
+    },
+    {
+      "identity" : "kakaomapssdk-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git",
+      "state" : {
+        "revision" : "cbd439a2fa3017e666efbd28a969da6cf9a471c9",
+        "version" : "2.12.2"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "e6749919f9761d573d37a7d7e78b1b854c191d7f",
+        "version" : "8.1.3"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios",
+      "state" : {
+        "revision" : "fe4c6fe3a0aa66cdeb51d549623c82ca9704b9a5",
+        "version" : "4.5.0"
       }
     },
     {

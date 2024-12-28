@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD5AE92BAE0574CA5E44EEB /* Pods_Musn.framework */; };
 		96A5E8C5051AE1B4E6808691 /* Pods_MusnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623A1D4EEC70F6BED4164380 /* Pods_MusnTests.framework */; };
+		B5265A462D1FC61400519A75 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A452D1FC61400519A75 /* CombineMoya */; };
+		B5265A482D1FC61400519A75 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A472D1FC61400519A75 /* Moya */; };
+		B5265A4B2D1FC64A00519A75 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A4A2D1FC64A00519A75 /* CombineMoya */; };
+		B5265A4D2D1FC64A00519A75 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A4C2D1FC64A00519A75 /* Moya */; };
+		B5265A502D1FC75E00519A75 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A4F2D1FC75E00519A75 /* Kingfisher */; };
+		B5265A532D1FC79300519A75 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A522D1FC79300519A75 /* Hero */; };
+		B5265A562D1FC7E300519A75 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A552D1FC7E300519A75 /* Lottie */; };
+		B594B83D2D1DAAE200ECF02B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B594B83C2D1DAAE200ECF02B /* Moya */; };
 		B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */; };
 		B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE41702D0F2BEA006AEEE6 /* Moya */; };
 		EED83133FD56B17E0773A458 /* Pods_Musn_MusnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */; };
@@ -84,6 +92,14 @@
 			files = (
 				B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */,
 				518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */,
+				B5265A4D2D1FC64A00519A75 /* Moya in Frameworks */,
+				B5265A502D1FC75E00519A75 /* Kingfisher in Frameworks */,
+				B5265A482D1FC61400519A75 /* Moya in Frameworks */,
+				B5265A4B2D1FC64A00519A75 /* CombineMoya in Frameworks */,
+				B5265A562D1FC7E300519A75 /* Lottie in Frameworks */,
+				B594B83D2D1DAAE200ECF02B /* Moya in Frameworks */,
+				B5265A462D1FC61400519A75 /* CombineMoya in Frameworks */,
+				B5265A532D1FC79300519A75 /* Hero in Frameworks */,
 				B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +271,11 @@
 			mainGroup = B5BE40FD2D0E8AE9006AEEE6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */,
+				B5265A442D1FC5E200519A75 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
+				B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */,
+				B5265A4E2D1FC75E00519A75 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B5265A512D1FC79300519A75 /* XCRemoteSwiftPackageReference "Hero" */,
+				B5265A542D1FC7E300519A75 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B5BE41072D0E8AE9006AEEE6 /* Products */;
@@ -740,6 +760,46 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B5265A442D1FC5E200519A75 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.12.2;
+			};
+		};
+		B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		B5265A4E2D1FC75E00519A75 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+		B5265A512D1FC79300519A75 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.3;
+			};
+		};
+		B5265A542D1FC7E300519A75 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -751,6 +811,46 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B5265A452D1FC61400519A75 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		B5265A472D1FC61400519A75 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		B5265A4A2D1FC64A00519A75 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		B5265A4C2D1FC64A00519A75 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		B5265A4F2D1FC75E00519A75 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5265A4E2D1FC75E00519A75 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B5265A522D1FC79300519A75 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5265A512D1FC79300519A75 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+		B5265A552D1FC7E300519A75 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5265A542D1FC7E300519A75 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		B594B83C2D1DAAE200ECF02B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;

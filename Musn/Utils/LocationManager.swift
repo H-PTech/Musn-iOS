@@ -34,7 +34,7 @@ class LocationManager: NSObject, ObservableObject {
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             if let placemark = placemarks?.first {
                 DispatchQueue.main.async {
-                    self.currentAddress = "\(placemark.subLocality ?? "Unknown") \(placemark.thoroughfare ?? "Unknown")"
+                    self.currentAddress = "\(placemark.subLocality ?? "Unknown") \(placemark.thoroughfare ?? "Unknown") 🎧"
                 }
             } else {
                 self.currentAddress = "Address unavailable"

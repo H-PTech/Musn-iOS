@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum Tab {
-    case home
-    case profile
-    case search
-}
-
 
 struct ContentView: View {
     @State private var selectedTab: Tab = .home
@@ -24,14 +18,17 @@ struct ContentView: View {
                 switch selectedTab {
                 case .home:
                     HomeView()
-                case .profile:
+                case .video:
                     ReelsPagingView()
-                case .search:
+                case .dropMusic:
                     SearchView()
+                case .dropVideo:
+                    VideoDropView()
                 }
 
                 CustomTabView(selectedTab: $selectedTab)
                     .frame(height: 50)
+                    .zIndex(1)
             }
         }
         .environmentObject(locationManager)
