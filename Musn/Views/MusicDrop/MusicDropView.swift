@@ -14,9 +14,9 @@ struct MusicDropView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            // 곡 정보 표시
             HStack {
                 if let artworkURL = song.artworkURL, let url = URL(string: artworkURL) {
+                   
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
@@ -38,6 +38,9 @@ struct MusicDropView: View {
                     Text(song.title)
                         .font(.headline)
                     Text(song.artistName)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    Text(song.artworkURL ?? "없음")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }

@@ -25,11 +25,9 @@ struct CustomTabView: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            // 탭 바 아이템들
             HStack {
                 Spacer()
 
-                // Home Button
                 Button {
                     print("Home tapped")
                     selectedTab = .home
@@ -46,9 +44,9 @@ struct CustomTabView: View {
                     }
                 }
 
+                
                 Spacer()
-
-                // 플로팅 버튼의 자리 확보
+                Spacer()
                 Spacer()
 
                 // Video Button
@@ -67,7 +65,6 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .video ? .neonGreen : .white)
                     }
                 }
-
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -79,10 +76,8 @@ struct CustomTabView: View {
             )
             .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: -3)
 
-            // 플로팅 버튼과 확장 버튼
             ZStack {
                 if isExpanded {
-                    // Music Button
                     Button {
                         print("Music tapped")
                         selectedTab = .dropMusic
@@ -104,7 +99,6 @@ struct CustomTabView: View {
                     }
                     .offset(x: -70, y: -70)
 
-                    // Video Button
                     Button {
                         print("Video tapped")
                         selectedTab = .dropVideo
@@ -127,7 +121,6 @@ struct CustomTabView: View {
                     .offset(x: 70, y: -70)
                 }
 
-                // 플로팅 메인 버튼
                 Button {
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                         isExpanded.toggle()
@@ -139,7 +132,7 @@ struct CustomTabView: View {
                             .frame(width: 70, height: 70)
                             .shadow(color: .neonGreen.opacity(0.8), radius: 15, x: 0, y: 5)
 
-                        // 자연스러운 애니메이션
+
                         Image(systemName: "plus")
                             .resizable()
                             .scaledToFit()
