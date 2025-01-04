@@ -9,14 +9,57 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
+       
             Text("Musn")
-                .font(Font.system(size: 42,weight: .bold))
-                .padding(.top, 40)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 90)
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            Button(action: {
+                kakaoLogin()
+            }) {
+                Image("kakao_login")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 50)
+                    .padding(.horizontal, 20)
+                    .background(Color.clear)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
+            
+            Button(action: {
+                googleLogin()
+            }) {
+                Image("google_login")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 50)
+                    .padding(.horizontal, 20)
+                    .background(Color.clear)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
+            
             Spacer()
         }
-        .ignoresSafeArea(.all)
-        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .background(Color.black)
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+
+    func kakaoLogin() {
+        print("Kakao Login Clicked")
+       
+    }
+    
+    func googleLogin() {
+        print("Google Login Clicked")
+        
     }
 }
 

@@ -8,14 +8,22 @@
 import SwiftUI
 import NMapsMap
 import FirebaseCore
+import KakaoSDKCommon
+import GoogleSignIn
+
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
+    
+    var googleSignInConfig: GIDConfiguration?
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        KakaoSDK.initSDK(appKey: AppConfig.kakaoAppKey ?? "")
+        googleSignInConfig = GIDConfiguration(clientID: AppConfig.googleKey ?? "")
+        
+        return true
+    }
 }
 
 @main

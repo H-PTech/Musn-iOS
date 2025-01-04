@@ -17,6 +17,12 @@
 		B5265A532D1FC79300519A75 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A522D1FC79300519A75 /* Hero */; };
 		B5265A562D1FC7E300519A75 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B5265A552D1FC7E300519A75 /* Lottie */; };
 		B594B83D2D1DAAE200ECF02B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B594B83C2D1DAAE200ECF02B /* Moya */; };
+		B59D39682D26F1EC00CC5A52 /* RxKakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = B59D39672D26F1EC00CC5A52 /* RxKakaoSDK */; };
+		B59D396A2D26F1EC00CC5A52 /* RxKakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B59D39692D26F1EC00CC5A52 /* RxKakaoSDKAuth */; };
+		B59D396C2D26F1EC00CC5A52 /* RxKakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = B59D396B2D26F1EC00CC5A52 /* RxKakaoSDKCommon */; };
+		B59D396E2D26F1EC00CC5A52 /* RxKakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = B59D396D2D26F1EC00CC5A52 /* RxKakaoSDKUser */; };
+		B59D39712D26F3AE00CC5A52 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B59D39702D26F3AE00CC5A52 /* GoogleSignIn */; };
+		B59D39732D26F3AE00CC5A52 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B59D39722D26F3AE00CC5A52 /* GoogleSignInSwift */; };
 		B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */; };
 		B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE41702D0F2BEA006AEEE6 /* Moya */; };
 		EED83133FD56B17E0773A458 /* Pods_Musn_MusnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2929554CC05ED8FF3DD3824D /* Pods_Musn_MusnUITests.framework */; };
@@ -91,13 +97,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE416F2D0F2BEA006AEEE6 /* CombineMoya in Frameworks */,
+				B59D39712D26F3AE00CC5A52 /* GoogleSignIn in Frameworks */,
 				518F48360EBDEA6DB51DCE27 /* Pods_Musn.framework in Frameworks */,
 				B5265A4D2D1FC64A00519A75 /* Moya in Frameworks */,
+				B59D396E2D26F1EC00CC5A52 /* RxKakaoSDKUser in Frameworks */,
 				B5265A502D1FC75E00519A75 /* Kingfisher in Frameworks */,
 				B5265A482D1FC61400519A75 /* Moya in Frameworks */,
+				B59D39682D26F1EC00CC5A52 /* RxKakaoSDK in Frameworks */,
+				B59D396A2D26F1EC00CC5A52 /* RxKakaoSDKAuth in Frameworks */,
+				B59D39732D26F3AE00CC5A52 /* GoogleSignInSwift in Frameworks */,
 				B5265A4B2D1FC64A00519A75 /* CombineMoya in Frameworks */,
 				B5265A562D1FC7E300519A75 /* Lottie in Frameworks */,
 				B594B83D2D1DAAE200ECF02B /* Moya in Frameworks */,
+				B59D396C2D26F1EC00CC5A52 /* RxKakaoSDKCommon in Frameworks */,
 				B5265A462D1FC61400519A75 /* CombineMoya in Frameworks */,
 				B5265A532D1FC79300519A75 /* Hero in Frameworks */,
 				B5BE41712D0F2BEA006AEEE6 /* Moya in Frameworks */,
@@ -271,11 +283,12 @@
 			mainGroup = B5BE40FD2D0E8AE9006AEEE6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				B5265A442D1FC5E200519A75 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
 				B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */,
 				B5265A4E2D1FC75E00519A75 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B5265A512D1FC79300519A75 /* XCRemoteSwiftPackageReference "Hero" */,
 				B5265A542D1FC7E300519A75 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
+				B59D396F2D26F3AE00CC5A52 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B5BE41072D0E8AE9006AEEE6 /* Products */;
@@ -589,6 +602,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Musn/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "이 앱은 Apple Music 데이터를 검색 및 활용하기 위해 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 정보를 허용합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보를 허용합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +639,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Musn/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "이 앱은 Apple Music 데이터를 검색 및 활용하기 위해 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "위치 정보를 허용합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보를 허용합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -760,14 +779,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B5265A442D1FC5E200519A75 /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.12.2;
-			};
-		};
 		B5265A492D1FC64A00519A75 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -798,6 +809,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.5.0;
+			};
+		};
+		B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk-rx";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.23.0;
+			};
+		};
+		B59D396F2D26F3AE00CC5A52 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
 			};
 		};
 		B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */ = {
@@ -850,6 +877,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B5BE416D2D0F2BEA006AEEE6 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		B59D39672D26F1EC00CC5A52 /* RxKakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDK;
+		};
+		B59D39692D26F1EC00CC5A52 /* RxKakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKAuth;
+		};
+		B59D396B2D26F1EC00CC5A52 /* RxKakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKCommon;
+		};
+		B59D396D2D26F1EC00CC5A52 /* RxKakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D39662D26F1EC00CC5A52 /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKUser;
+		};
+		B59D39702D26F3AE00CC5A52 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D396F2D26F3AE00CC5A52 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		B59D39722D26F3AE00CC5A52 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59D396F2D26F3AE00CC5A52 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 		B5BE416E2D0F2BEA006AEEE6 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

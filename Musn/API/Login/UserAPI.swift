@@ -9,8 +9,9 @@ import Moya
 
 
 enum UserAPI {
-    case login(accessToken: String)
-    //case logout
+    case kakaoLogin(accessToken: String)
+    case googleLogin(accessToken: String)
+   
 }
 
 extension UserAPI: TargetType {
@@ -20,30 +21,34 @@ extension UserAPI: TargetType {
     
     var path: String {
         switch self {
-        case .login:
-            return "/auth/login"
+        case .kakaoLogin:
+            return "/auth/login/kakao"
+        case .googleLogin:
+            return "/auth/login/google"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .kakaoLogin,.googleLogin:
             return .post
         }
     }
     
     var task: Moya.Task {
         switch self {
-        case .login(let accessToken):
-            return .requestParameters(parameters: ["token": accessToken], encoding: JSONEncoding.default)
+        case .kakaoLogin(_), .googleLogin(_):
+            return .requestPlain
+        
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .login(_):
+        case .kakaoLogin(let accessToken),.googleLogin(let accessToken):
             return [
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(accessToken)"
             ]
         }
     }

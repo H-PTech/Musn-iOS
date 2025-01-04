@@ -15,7 +15,6 @@ class LocationManager: NSObject, ObservableObject {
     @Published var location: CLLocation?
     @Published var error: Error?
     
-    // 위치 업데이트를 전달하는 클로저
     var onLocationUpdate: ((CLLocation) -> Void)?
 
     private var isOneTimeUpdate: Bool
@@ -49,7 +48,6 @@ extension LocationManager: CLLocationManagerDelegate {
         self.location = newLocation
         fetchAddress(from: newLocation)
         
-        // 클로저 호출
         onLocationUpdate?(newLocation)
         
         if isOneTimeUpdate {

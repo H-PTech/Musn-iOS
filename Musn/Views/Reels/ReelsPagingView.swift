@@ -62,7 +62,6 @@ struct ReelsPagingView: View {
                         player.pause()
                         cancellable?.cancel()
                     }
-                
                 VStack {
                     Spacer()
                     
