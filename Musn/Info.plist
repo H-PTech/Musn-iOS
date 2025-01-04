@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaolink</string>
+		<string>kakaokompassauth</string>
+	</array>
 	<key>GIDClientID</key>
 	<string>165501412632-edhle109q9kb7mgbs8i9vf715ipoqf6l.apps.googleusercontent.com/</string>
 	<key>KAKAO_APP_KEY</key>
@@ -15,7 +20,7 @@
 			<string>kakaologin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao	5ddedafa6206e0de888d5fc378112422</string>
+				<string>kakao5ddedafa6206e0de888d5fc378112422</string>
 			</array>
 		</dict>
 	</array>

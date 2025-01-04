@@ -18,8 +18,6 @@ struct HomeView: View {
     
 }
 
-// 버튼 데이터 모델
-
 
 #Preview {
     HomeView()

@@ -8,4 +8,8 @@
 struct Settings {
     @UserDefault(key: "accessToken", defaultValue: "")
     static var accessToken: String
+    
+    @UserDefault(key: "refreshToken", defaultValue: "")
+    static var refreshToken: String
+    
 }

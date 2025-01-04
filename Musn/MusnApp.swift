@@ -10,6 +10,7 @@ import NMapsMap
 import FirebaseCore
 import KakaoSDKCommon
 import GoogleSignIn
+import KakaoSDKAuth
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -18,8 +19,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-        KakaoSDK.initSDK(appKey: AppConfig.kakaoAppKey ?? "")
         googleSignInConfig = GIDConfiguration(clientID: AppConfig.googleKey ?? "")
         
         return true
@@ -36,11 +35,18 @@ struct MusnApp: App {
         } else {
             fatalError("NaverClientID not found in Info.plist")
         }
+        KakaoSDK.initSDK(appKey: AppConfig.kakaoAppKey ?? "")
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .preferredColorScheme(.dark)
+            LoginView()
+                .onOpenURL { url in
+                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                        _ = AuthController.handleOpenUrl(url: url)
+                    }
+                }
+            //            ContentView()
+            //                .preferredColorScheme(.dark)
         }
     }
 }

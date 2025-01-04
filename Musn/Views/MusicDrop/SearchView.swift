@@ -110,7 +110,6 @@ struct SearchView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-
     private func performSearch(query: String) {
         guard !query.isEmpty else { return }
 
@@ -141,9 +140,6 @@ struct SearchView: View {
         }
     }
 }
-
-
-
 #Preview {
     SearchView()
 }

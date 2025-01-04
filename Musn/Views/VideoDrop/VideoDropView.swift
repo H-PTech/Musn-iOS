@@ -4,14 +4,15 @@
 //
 //  Created by 권민재 on 12/28/24.
 //
-
 import SwiftUI
 import PhotosUI
 import AVKit
+import AVFoundation
 
 struct VideoDropView: View {
     @State private var isPickerPresented = false
     @State private var selectedVideoURL: URL?
+    @State private var thumbnailImage: UIImage?
     @State private var contentDescription: String = ""
 
     var body: some View {
@@ -19,7 +20,18 @@ struct VideoDropView: View {
             Button(action: {
                 isPickerPresented = true
             }) {
-                if let videoURL = selectedVideoURL {
+                if let thumbnail = thumbnailImage {
+                    Image(uiImage: thumbnail)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 200)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
+                        .padding(.horizontal)
+                } else if let videoURL = selectedVideoURL {
                     VideoPlayer(player: AVPlayer(url: videoURL))
                         .frame(height: 200)
                         .cornerRadius(10)
@@ -48,7 +60,6 @@ struct VideoDropView: View {
                 .cornerRadius(10)
                 .padding(.horizontal)
 
-            // 등록 버튼
             Button(action: {
                 handleRegistration()
             }) {
@@ -65,13 +76,12 @@ struct VideoDropView: View {
             .opacity((selectedVideoURL == nil || contentDescription.isEmpty) ? 0.5 : 1.0)
         }
         .sheet(isPresented: $isPickerPresented) {
-            VideoPicker(selectedVideoURL: $selectedVideoURL)
+            VideoPicker(selectedVideoURL: $selectedVideoURL, thumbnailImage: $thumbnailImage)
         }
         .padding()
         Spacer()
     }
 
-    // 등록 버튼 액션
     private func handleRegistration() {
         print("Video URL: \(selectedVideoURL?.absoluteString ?? "No Video Selected")")
         print("Content Description: \(contentDescription)")
@@ -79,20 +89,20 @@ struct VideoDropView: View {
     }
 }
 
-// VideoPicker: PHPickerViewController를 SwiftUI에 연결
 struct VideoPicker: UIViewControllerRepresentable {
     @Binding var selectedVideoURL: URL?
+    @Binding var thumbnailImage: UIImage?
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration()
-        configuration.filter = .videos // 비디오만 선택 가능
-        configuration.selectionLimit = 1 // 한 번에 하나의 비디오만 선택
+        configuration.filter = .videos
+        configuration.selectionLimit = 1
 
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = context.coordinator
         return picker
     }
-
+ 
     func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
@@ -117,8 +127,27 @@ struct VideoPicker: UIViewControllerRepresentable {
                 if let url = url {
                     DispatchQueue.main.async {
                         self.parent.selectedVideoURL = url
+                    
+                        self.parent.thumbnailImage = self.generateThumbnail(for: url)
                     }
                 }
+            }
+        }
+
+
+        private func generateThumbnail(for videoURL: URL) -> UIImage? {
+            let asset = AVAsset(url: videoURL)
+            let assetImageGenerator = AVAssetImageGenerator(asset: asset)
+            assetImageGenerator.appliesPreferredTrackTransform = true
+
+            let time = CMTime(seconds: 0, preferredTimescale: 60)
+            print("Video URL: \(videoURL)")
+            do {
+                let cgImage = try assetImageGenerator.copyCGImage(at: time, actualTime: nil)
+                return UIImage(cgImage: cgImage)
+            } catch {
+                print("Fail to generate thumbnail: \(error.localizedDescription)")
+                return nil
             }
         }
     }
