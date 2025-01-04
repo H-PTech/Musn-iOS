@@ -39,14 +39,14 @@ struct MusnApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .onOpenURL { url in
-                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                        _ = AuthController.handleOpenUrl(url: url)
-                    }
-                }
-            //            ContentView()
-            //                .preferredColorScheme(.dark)
+//            LoginView()
+//                .onOpenURL { url in
+//                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+//                        _ = AuthController.handleOpenUrl(url: url)
+//                    }
+//                }
+                        ContentView()
+                            .preferredColorScheme(.dark)
         }
     }
 }

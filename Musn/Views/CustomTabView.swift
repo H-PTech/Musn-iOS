@@ -29,7 +29,6 @@ struct CustomTabView: View {
                 Spacer()
 
                 Button {
-                    print("Home tapped")
                     selectedTab = .home
                 } label: {
                     VStack {
@@ -44,14 +43,11 @@ struct CustomTabView: View {
                     }
                 }
 
-                
                 Spacer()
                 Spacer()
                 Spacer()
 
-                // Video Button
                 Button {
-                    print("Video tab tapped")
                     selectedTab = .video
                 } label: {
                     VStack {
@@ -65,6 +61,7 @@ struct CustomTabView: View {
                             .foregroundStyle(selectedTab == .video ? .neonGreen : .white)
                     }
                 }
+
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -79,7 +76,6 @@ struct CustomTabView: View {
             ZStack {
                 if isExpanded {
                     Button {
-                        print("Music tapped")
                         selectedTab = .dropMusic
                         withAnimation {
                             isExpanded = false
@@ -100,7 +96,6 @@ struct CustomTabView: View {
                     .offset(x: -70, y: -70)
 
                     Button {
-                        print("Video tapped")
                         selectedTab = .dropVideo
                         withAnimation {
                             isExpanded = false
@@ -132,13 +127,12 @@ struct CustomTabView: View {
                             .frame(width: 70, height: 70)
                             .shadow(color: .neonGreen.opacity(0.8), radius: 15, x: 0, y: 5)
 
-
                         Image(systemName: "plus")
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(.white)
                             .frame(width: 30, height: 30)
-                            .rotationEffect(.degrees(isExpanded ? 135 : 0)) // +에서 x로 변경
+                            .rotationEffect(.degrees(isExpanded ? 135 : 0))
                             .animation(.easeInOut(duration: 0.3), value: isExpanded)
                     }
                     .offset(y: -20)

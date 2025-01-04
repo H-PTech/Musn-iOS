@@ -13,10 +13,11 @@ struct VideoDropView: View {
     @State private var isPickerPresented = false
     @State private var selectedVideoURL: URL?
     @State private var thumbnailImage: UIImage?
+    @State private var title: String = ""
     @State private var contentDescription: String = ""
 
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Button(action: {
                 isPickerPresented = true
             }) {
@@ -24,42 +25,58 @@ struct VideoDropView: View {
                     Image(uiImage: thumbnail)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 200)
-                        .cornerRadius(10)
+                        .frame(height: 220)
+                        .cornerRadius(15)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.gray, lineWidth: 1)
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
                         )
                         .padding(.horizontal)
                 } else if let videoURL = selectedVideoURL {
                     VideoPlayer(player: AVPlayer(url: videoURL))
-                        .frame(height: 200)
-                        .cornerRadius(10)
+                        .frame(height: 220)
+                        .cornerRadius(15)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.gray, lineWidth: 1)
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
                         )
                         .padding(.horizontal)
                 } else {
-                    Image(systemName: "video.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 200)
-                        .foregroundColor(.gray)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.black.opacity(0.1))
-                        )
-                        .padding(.horizontal)
+                    VStack {
+                        Image(systemName: "video.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 100)
+                            .foregroundColor(.gray)
+                        Text("Tap to select a video")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                    }
+                    .frame(height: 220)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.gray.opacity(0.2))
+                    )
+                    .padding(.horizontal)
                 }
             }
-
-            TextField("등록할 글을 입력하주세요.", text: $contentDescription)
-                .padding()
-                .background(Color.black.opacity(0.05))
-                .cornerRadius(10)
-                .padding(.horizontal)
-
+            
+            VStack(spacing: 10) {
+                TextField("Enter video title", text: $title)
+                    .padding()
+                    .background(Color.gray.opacity(0.15))
+                    .cornerRadius(10)
+                    .font(.system(size: 16, weight: .medium))
+                    .padding(.horizontal)
+                
+                TextField("Write a description", text: $contentDescription)
+                    .padding()
+                    .background(Color.gray.opacity(0.15))
+                    .cornerRadius(10)
+                    .font(.system(size: 16, weight: .medium))
+                    .padding(.horizontal)
+            }
+            
             Button(action: {
                 handleRegistration()
             }) {
@@ -70,16 +87,20 @@ struct VideoDropView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.blue)
                     .cornerRadius(10)
+                    .shadow(color: Color.blue.opacity(0.4), radius: 5, x: 0, y: 5)
                     .padding(.horizontal)
             }
             .disabled(selectedVideoURL == nil || contentDescription.isEmpty)
             .opacity((selectedVideoURL == nil || contentDescription.isEmpty) ? 0.5 : 1.0)
+            
+            Spacer()
         }
         .sheet(isPresented: $isPickerPresented) {
             VideoPicker(selectedVideoURL: $selectedVideoURL, thumbnailImage: $thumbnailImage)
         }
         .padding()
-        Spacer()
+        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .foregroundColor(.white)
     }
 
     private func handleRegistration() {
@@ -88,6 +109,9 @@ struct VideoDropView: View {
         // 등록 로직 추가
     }
 }
+
+
+
 
 struct VideoPicker: UIViewControllerRepresentable {
     @Binding var selectedVideoURL: URL?
@@ -155,4 +179,5 @@ struct VideoPicker: UIViewControllerRepresentable {
 
 #Preview {
     VideoDropView()
+        .preferredColorScheme(.dark)
 }

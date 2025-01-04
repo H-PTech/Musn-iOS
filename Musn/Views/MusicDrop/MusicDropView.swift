@@ -14,14 +14,19 @@ struct MusicDropView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            HStack {
+            
+            Text("해당 지역에 음악을\n 놓고 가시겠습니까?")
+                .font(Font.system(size: 20,weight: .bold))
+                .foregroundStyle(Color.green)
+                
+            
                 if let artworkURL = song.artworkURL, let url = URL(string: artworkURL) {
                    
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 150, height: 150)
                             .cornerRadius(8)
                     } placeholder: {
                         Color.gray
@@ -33,22 +38,17 @@ struct MusicDropView: View {
                         .frame(width: 50, height: 50)
                         .cornerRadius(8)
                 }
-                
+                Spacer()
                 VStack(alignment: .leading) {
                     Text(song.title)
                         .font(.headline)
                     Text(song.artistName)
                         .font(.subheadline)
                         .foregroundColor(.gray)
-                    Text(song.artworkURL ?? "없음")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
                 }
                 Spacer()
-            }
-            .padding()
             
-            // 등록 내용 입력
+        
             TextField("드롭에 대한 내용을 입력하세요.", text: $contentDescription)
                 .padding()
                 .background(Color(white: 0.15))
@@ -59,7 +59,7 @@ struct MusicDropView: View {
                 .background(Color(white: 0.15))
                 .cornerRadius(10)
             
-            // 등록 버튼
+            
             Button(action: {
                 handleRegistration()
             }) {
@@ -82,4 +82,15 @@ struct MusicDropView: View {
         print("내용: \(contentDescription)")
         print("위치: \(location)")
     }
+}
+
+#Preview {
+    let sampleSong = Song(
+        id: "1",
+        title: "거리에서",
+        artistName: "Sung Si Kyung",
+        artworkURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg"
+    )
+    MusicDropView(song: sampleSong)
+        .preferredColorScheme(.dark)
 }

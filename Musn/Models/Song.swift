@@ -14,11 +14,23 @@ struct Song: Identifiable, Codable {
     let artistName: String
     let artworkURL: String?
     
+    
+    //preview 테스트
+    init(id: String, title: String, artistName: String, artworkURL: String? = nil) {
+        self.id = id
+        self.title = title
+        self.artistName = artistName
+        self.artworkURL = artworkURL
+    }
+
+    
     init(from musicSong: MusicKit.Song) {
         self.id = musicSong.id.rawValue
         self.title = musicSong.title
         self.artistName = musicSong.artistName
         self.artworkURL = musicSong.artwork?.url(width: 100, height: 100)?.absoluteString
     }
+    
+    
     
 }
