@@ -6,60 +6,114 @@
 //
 
 import SwiftUI
+import Combine
+
+struct LimitedTextEditor: View {
+    @Binding var text: String
+    let placeholder: String
+    let characterLimit: Int
+    
+    @State private var remainingCharacters: Int
+    
+    init(text: Binding<String>, placeholder: String, characterLimit: Int) {
+        self._text = text
+        self.placeholder = placeholder
+        self.characterLimit = characterLimit
+        self._remainingCharacters = State(initialValue: characterLimit - text.wrappedValue.count)
+    }
+    
+    var body: some View {
+        VStack(alignment: .trailing, spacing: 4) {
+            ZStack(alignment: .topLeading) {
+                if text.isEmpty {
+                    Text(placeholder)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 10)
+                }
+                
+                TextEditor(text: $text)
+                    .padding(4)
+                    .background(Color(white: 0.15))
+                    .cornerRadius(10)
+                    .frame(height: 100)
+                    .foregroundColor(.white)
+                    .onChange(of: text) { newValue in
+                        if newValue.count > characterLimit {
+                            text = String(newValue.prefix(characterLimit))
+                        }
+                        remainingCharacters = characterLimit - text.count
+                    }
+            }
+            
+            // 글자수 표시
+            Text("\(remainingCharacters)자 남음")
+                .font(.caption)
+                .foregroundColor(remainingCharacters < 0 ? .red : .gray)
+        }
+    }
+}
 
 struct MusicDropView: View {
     let song: Song
     @State private var contentDescription: String = ""
+    @State private var title: String = ""
     @State private var location: String = ""
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
+            // 상단 메시지
+            Text("해당 지역에 음악을\n놓고 가시겠습니까?")
+                .font(.system(size: 26, weight: .bold))
+                .foregroundColor(.purple)
+                .multilineTextAlignment(.center)
+                .padding(.top)
             
-            Text("해당 지역에 음악을\n 놓고 가시겠습니까?")
-                .font(Font.system(size: 20,weight: .bold))
-                .foregroundStyle(Color.green)
-                
-            
+            VStack(spacing: 10) {
                 if let artworkURL = song.artworkURL, let url = URL(string: artworkURL) {
-                   
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 150, height: 150)
-                            .cornerRadius(8)
+                            .cornerRadius(12)
+                            .shadow(radius: 5)
                     } placeholder: {
                         Color.gray
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(8)
+                            .frame(width: 150, height: 150)
+                            .cornerRadius(12)
                     }
                 } else {
                     Color.gray
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(8)
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(12)
                 }
-                Spacer()
-                VStack(alignment: .leading) {
+                
+                VStack(alignment: .center, spacing: 5) {
                     Text(song.title)
-                        .font(.headline)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
                     Text(song.artistName)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                Spacer()
+            }
             
-        
-            TextField("드롭에 대한 내용을 입력하세요.", text: $contentDescription)
-                .padding()
+            TextField("드랍 제목을 입력하세요",text: $title)
+                .padding(8)
                 .background(Color(white: 0.15))
                 .cornerRadius(10)
-            
-            TextField("위치를 입력하세요.", text: $location)
-                .padding()
-                .background(Color(white: 0.15))
-                .cornerRadius(10)
+                .foregroundColor(.white)
             
             
+            LimitedTextEditor(
+                text: $contentDescription,
+                placeholder: "내용을 입력하세요.",
+                characterLimit: 200
+            )
+                       
+
             Button(action: {
                 handleRegistration()
             }) {
@@ -68,10 +122,13 @@ struct MusicDropView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.green)
+                    .background(Color.purple)
                     .cornerRadius(10)
+                    .shadow(color: .green.opacity(0.5), radius: 5, x: 0, y: 5)
             }
-            .padding(.horizontal)
+            .padding(.top, 10)
+            
+            Spacer()
         }
         .padding()
         .background(Color.black.ignoresSafeArea())
@@ -83,6 +140,8 @@ struct MusicDropView: View {
         print("위치: \(location)")
     }
 }
+
+
 
 #Preview {
     let sampleSong = Song(

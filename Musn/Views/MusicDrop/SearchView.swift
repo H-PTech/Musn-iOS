@@ -13,13 +13,21 @@ struct SearchView: View {
     @State private var isSearching = false
     @State private var permissionError = false
 
+    // 추천 곡 데이터
+    private let recommendedSongs = [
+        Song(id: "1", title: "너였다면", artistName: "정승환", artworkURL: nil),
+        Song(id: "2", title: "너를 만나", artistName: "폴킴", artworkURL: nil),
+        Song(id: "3", title: "거리에서", artistName: "성시경", artworkURL: nil),
+        Song(id: "4", title: "헤어지자 말해요", artistName: "박재정", artworkURL: nil),
+        Song(id: "5", title: "너를 너를 너를", artistName: "성시경", artworkURL: nil)
+    ]
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.black.ignoresSafeArea()
 
                 VStack(alignment: .leading) {
-                    // 검색 입력
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
@@ -36,25 +44,43 @@ struct SearchView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
 
-                    if permissionError {
-                        Text("Apple Music 권한이 필요합니다.")
-                            .foregroundColor(.red)
-                            .padding(.horizontal)
-                    } else if isSearching {
-                        Text("검색 중...")
-                            .foregroundColor(.gray)
-                            .padding(.horizontal)
-                            .padding(.top, 10)
-                    } else if searchResults.isEmpty {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("검색 결과가 없습니다😢.\n다른 검색어를 시도해보세요.")
-                                .foregroundColor(.gray)
-                                .multilineTextAlignment(.center)
+                    if searchText.isEmpty {
+                        // 추천 곡 뷰
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("가끔 너 생각 나는 날에는\n이 노래를 들어")
+                                .foregroundColor(.white)
+                                .font(.headline)
                                 .padding(.horizontal)
-                            Spacer()
+
+                            VStack(spacing: 10) {
+                                ForEach(recommendedSongs) { song in
+                                    Button(action: {
+                                        // 추천 곡 클릭 시 동작
+                                        searchText = song.title
+                                        performSearch(query: song.title)
+                                    }) {
+                                        HStack {
+                                            Text("\(song.title)")
+                                                .foregroundColor(.white)
+                                                .font(.headline)
+                                            Spacer()
+                                            Text(song.artistName)
+                                                .foregroundColor(.gray)
+                                                .font(.subheadline)
+                                        }
+                                        .padding()
+                                        .background(Color(white: 0.2))
+                                        .cornerRadius(10)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal)
                         }
+                        .padding(.vertical)
+                    }
+
+                    if searchResults.isEmpty {
+                        Spacer()
                         Spacer()
                     } else {
                         ScrollView {
@@ -106,10 +132,11 @@ struct SearchView: View {
                     await requestMusicAuthorization()
                 }
             }
-            .navigationTitle("음악 검색")
+            .navigationTitle("드랍할 음악 검색")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+
     private func performSearch(query: String) {
         guard !query.isEmpty else { return }
 
@@ -140,6 +167,8 @@ struct SearchView: View {
         }
     }
 }
+
+
 #Preview {
     SearchView()
 }
