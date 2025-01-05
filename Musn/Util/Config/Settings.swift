@@ -6,10 +6,10 @@
 //
 
 struct Settings {
-    @UserDefault(key: "accessToken", defaultValue: "")
-    static var accessToken: String
+    @UserDefault(key: "accessToken", defaultValue: nil)
+    static var accessToken: String?
     
-    @UserDefault(key: "refreshToken", defaultValue: "")
-    static var refreshToken: String
+    @UserDefault(key: "refreshToken", defaultValue: nil)
+    static var refreshToken: String?
     
 }

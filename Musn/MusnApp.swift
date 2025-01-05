@@ -28,6 +28,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct MusnApp: App {
     
+    @StateObject private var loginViewModel = LoginViewModel()
+    
     init() {
         if let clientId = Bundle.main.object(forInfoDictionaryKey: "NaverClientID") as? String {
             NMFAuthManager.shared().clientId = clientId
@@ -39,14 +41,17 @@ struct MusnApp: App {
     }
     var body: some Scene {
         WindowGroup {
-//            LoginView()
-//                .onOpenURL { url in
-//                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
-//                        _ = AuthController.handleOpenUrl(url: url)
-//                    }
-//                }
-                        ContentView()
-                            .preferredColorScheme(.dark)
+            if Settings.accessToken != nil {
+                ContentView()
+                    .preferredColorScheme(.dark)
+            } else {
+                LoginView()
+                    .onOpenURL { url in
+                        if AuthApi.isKakaoTalkLoginUrl(url) {
+                            _ = AuthController.handleOpenUrl(url: url)
+                        }
+                    }
+            }
         }
     }
 }

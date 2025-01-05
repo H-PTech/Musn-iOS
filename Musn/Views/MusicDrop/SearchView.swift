@@ -45,7 +45,6 @@ struct SearchView: View {
                     .padding(.horizontal)
 
                     if searchText.isEmpty {
-                        // 추천 곡 뷰
                         VStack(alignment: .leading, spacing: 10) {
                             Text("가끔 너 생각 나는 날에는\n이 노래를 들어")
                                 .foregroundColor(.white)
@@ -55,7 +54,6 @@ struct SearchView: View {
                             VStack(spacing: 10) {
                                 ForEach(recommendedSongs) { song in
                                     Button(action: {
-                                        // 추천 곡 클릭 시 동작
                                         searchText = song.title
                                         performSearch(query: song.title)
                                     }) {
