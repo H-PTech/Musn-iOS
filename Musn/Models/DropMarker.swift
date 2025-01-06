@@ -11,6 +11,6 @@ import NMapsMap
 struct DropMarker {
     let latitude: Double
     let longitude: Double
-    let icon: NMFOverlayImage
+    let imageURL: String
     let title: String
 }
