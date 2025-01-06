@@ -13,43 +13,85 @@ import KakaoSDKUser
 @MainActor
 class LoginViewModel: ObservableObject {
     private let provider = MoyaProvider<UserAPI>()
-    @Published var isLogin: Bool = false
     @Published var errorMessage: String? = nil
-    
+
+    @AppStorage("isLogin") var isLogin: Bool = false
+    @AppStorage("accessToken") var accessToken: String?
+    @AppStorage("refreshToken") var refreshToken: String?
+
+    // 카카오 로그인
     func loginWithKakao() async {
         do {
-            let accessToken = try await initiateKakaoLogin()
-            try await authenticateWithServer(accessToken: accessToken)
+            let token = try await initiateKakaoLogin()
+            try await authenticateWithServer(accessToken: token)
         } catch {
             handleError(error, message: "카카오 로그인 실패")
         }
     }
 
-    func reissueToken() async {
+    func validateRefreshToken() async {
+        guard let token = refreshToken else {
+            print("Refresh Token 없음 - 로그아웃 처리")
+            logout()
+            return
+        }
+        
         do {
-            guard let refreshToken = Settings.refreshToken else {
-                throw NSError(domain: "RefreshTokenError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Refresh token not found."])
-            }
-            let response = try await provider.asyncRequest(.reissueToken(refreshToken: refreshToken))
+            print("Refresh Token 유효성 검사 중...")
+            let response = try await provider.asyncRequest(.reissueToken(refreshToken: token))
             try validateResponse(response)
             
             let tokenResponse = try decodeResponse(Token.self, from: response.data)
             storeToken(tokenResponse)
-            print("토큰 재발급 성공")
+            print("Refresh Token 유효 - 새로운 Access Token 발급 성공: \(tokenResponse)")
+            isLogin = true
         } catch {
-            handleError(error, message: "토큰 재발급 실패")
+            print("Refresh Token 유효성 검사 실패: \(error.localizedDescription)")
+            logout()
         }
     }
-    
+
+    //재발급
+    func reissueToken() async {
+        guard let token = refreshToken else {
+            print("Refresh Token 없음 - 로그아웃 상태로 전환")
+            logout()
+            return
+        }
+
+        do {
+            print("Refresh Token으로 Access Token 재발급 중...")
+            let response = try await provider.asyncRequest(.reissueToken(refreshToken: token))
+            try validateResponse(response)
+
+            let tokenResponse = try decodeResponse(Token.self, from: response.data)
+            storeToken(tokenResponse)
+            print("토큰 재발급 성공: \(tokenResponse)")
+            isLogin = true
+        } catch {
+            print("토큰 재발급 실패: \(error.localizedDescription)")
+            logout()
+        }
+    }
+
+    // 로그아웃 처리
+    func logout() {
+        accessToken = nil
+        refreshToken = nil
+        isLogin = false
+        print("로그아웃 완료 - 상태 초기화")
+    }
+
+    // 카카오 로그인 플로우 시작
     private func initiateKakaoLogin() async throws -> String {
         return try await withCheckedThrowingContinuation { continuation in
             if UserApi.isKakaoTalkLoginAvailable() {
-                print("카카오톡 로그인 시도")
+                print("카카오톡 로그인 시도 중...")
                 UserApi.shared.loginWithKakaoTalk { oauthToken, error in
                     self.handleOAuthResponse(oauthToken, error, continuation: continuation)
                 }
             } else {
-                print("카카오 계정 로그인 시도")
+                print("카카오 계정 로그인 시도 중...")
                 UserApi.shared.loginWithKakaoAccount { oauthToken, error in
                     self.handleOAuthResponse(oauthToken, error, continuation: continuation)
                 }
@@ -57,23 +99,25 @@ class LoginViewModel: ObservableObject {
         }
     }
 
+    // 서버로 Access Token 전송
     private func authenticateWithServer(accessToken: String) async throws {
         let response = try await provider.asyncRequest(.kakaoLogin(accessToken: accessToken))
         try validateResponse(response)
-        
+
         let tokenResponse = try decodeResponse(Token.self, from: response.data)
         storeToken(tokenResponse)
-        print("카카오 로그인 서버 응답 성공: \(tokenResponse)")
-        
+        print("서버 인증 성공: \(tokenResponse)")
         isLogin = true
     }
 
+    // 서버 응답 상태 검증
     private func validateResponse(_ response: Response) throws {
         guard (200...299).contains(response.statusCode) else {
             throw NSError(domain: "ServerError", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: "서버 응답 실패: \(response.statusCode)"])
         }
     }
 
+    // JSON 디코딩
     private func decodeResponse<T: Decodable>(_ type: T.Type, from data: Data) throws -> T {
         do {
             return try JSONDecoder().decode(T.self, from: data)
@@ -82,6 +126,7 @@ class LoginViewModel: ObservableObject {
         }
     }
 
+    // OAuth 응답 처리
     private func handleOAuthResponse(
         _ oauthToken: OAuthToken?,
         _ error: Error?,
@@ -98,14 +143,15 @@ class LoginViewModel: ObservableObject {
 
     // 토큰 저장
     private func storeToken(_ tokenResponse: Token) {
-        Settings.accessToken = tokenResponse.accessToken
-        Settings.refreshToken = tokenResponse.refreshToken
+        accessToken = tokenResponse.accessToken
+        refreshToken = tokenResponse.refreshToken
+        print("토큰 저장 완료: AccessToken=\(tokenResponse.accessToken), RefreshToken=\(tokenResponse.refreshToken)")
     }
 
     // 오류 처리
     private func handleError(_ error: Error, message: String) {
         errorMessage = "\(message): \(error.localizedDescription)"
-        print("Error: \(error)")
+        print("Error: \(message): \(error)")
     }
 }
 

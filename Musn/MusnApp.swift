@@ -29,6 +29,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MusnApp: App {
     
     @StateObject private var loginViewModel = LoginViewModel()
+    @AppStorage("accessToken") var accessToken: String?
+    @AppStorage("refreshToken") var refreshToken: String?
     
     init() {
         if let clientId = Bundle.main.object(forInfoDictionaryKey: "NaverClientID") as? String {
@@ -41,7 +43,7 @@ struct MusnApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            if Settings.accessToken != nil {
+            if accessToken != nil {
                 ContentView()
                     .preferredColorScheme(.dark)
             } else {
