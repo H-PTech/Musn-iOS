@@ -46,12 +46,12 @@ struct MapView: UIViewRepresentable {
         mapView.isNightModeEnabled = true
         mapView.mapType = .navi
 
-        // 초기 카메라 위치 설정
+     
         let cameraUpdate = NMFCameraUpdate(scrollTo: initialLocation, zoomTo: 14)
         cameraUpdate.animation = .easeIn
         mapView.moveCamera(cameraUpdate)
 
-        // 원형 오버레이 추가
+        
         let circleOverlay = NMFCircleOverlay()
         circleOverlay.center = initialLocation
         circleOverlay.radius = 600
@@ -64,7 +64,6 @@ struct MapView: UIViewRepresentable {
             let userLocation = NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
             circleOverlay.center = userLocation
 
-            // 사용자 위치로 카메라 이동
             let userCameraUpdate = NMFCameraUpdate(scrollTo: userLocation, zoomTo: 14)
             userCameraUpdate.animation = .easeIn
             mapView.moveCamera(userCameraUpdate)
@@ -74,8 +73,6 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: NMFMapView, context: Context) {
-
-
        
         let circleOverlay = NMFCircleOverlay()
         circleOverlay.center = initialLocation
@@ -127,36 +124,7 @@ struct MapView: UIViewRepresentable {
 struct MapContainerView: View {
     @StateObject private var locationManager = LocationManager()
     @State private var markers: [DropMarker] = [
-           DropMarker(
-               latitude: 37.4995,
-               longitude: 127.0288,
-               imageURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg",
-               title: "교보타워"
-           ),
-           DropMarker(
-               latitude: 37.4955,
-               longitude: 127.0291,
-               imageURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg",
-               title: "삼성동 코엑스몰"
-           ),
-           DropMarker(
-               latitude: 37.4971,
-               longitude: 127.0252,
-               imageURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg",
-               title: "역삼문화센터"
-           ),
-           DropMarker(
-               latitude: 37.5002,
-               longitude: 127.0300,
-               imageURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg",
-               title: "역삼공원"
-           ),
-           DropMarker(
-               latitude: 37.4948,
-               longitude: 127.0265,
-               imageURL: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/7c/88/217c88ed-80bf-adfa-7cdf-a5c219daf9f7/8809784722939.jpg/100x100bb.jpg",
-               title: "강남세브란스병원"
-           )
+           
        ]
 
     var body: some View {

@@ -11,9 +11,6 @@ import Foundation
 
 enum DropAPI {
     case fetchAllDrop(lat: Double, lng: Double, radius: Double?)
-    
-    
-    
     //CRUD
     case addDrop(accessToken: String, lng: Double, lat: Double, category: String?, content: String, type: Int, code: String?, title: String?, url: String?)
     

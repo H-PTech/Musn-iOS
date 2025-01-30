@@ -6,6 +6,16 @@
 //
 
 import Foundation
+import Moya 
+
+enum NetworkError: Error {
+    case invalidResponse
+    case statusCode(Int)
+    case decodingError
+    case moyaError(MoyaError)
+}
+
+
 
 struct APIResponse<T> {
     let statusCode: String
