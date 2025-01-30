@@ -29,6 +29,7 @@ class LocationManager: NSObject, ObservableObject {
         manager.startUpdatingLocation()
     }
     
+
     private func fetchAddress(from location: CLLocation) {
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             if let placemark = placemarks?.first {
@@ -39,6 +40,14 @@ class LocationManager: NSObject, ObservableObject {
                 self.currentAddress = "Address unavailable"
             }
         }
+    }
+    
+   
+    func fetchLatLng() -> (latitude: Double?, longitude: Double?) {
+        guard let location = location else {
+            return (nil, nil)
+        }
+        return (location.coordinate.latitude, location.coordinate.longitude)
     }
 }
 

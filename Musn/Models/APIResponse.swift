@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Moya 
+import Moya
 
 enum NetworkError: Error {
     case invalidResponse

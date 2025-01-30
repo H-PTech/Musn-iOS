@@ -15,6 +15,11 @@ struct LimitedTextEditor: View {
     
     @State private var remainingCharacters: Int
     
+    @AppStorage("accessToken") var accessToken: String?
+    
+    
+    
+    
     init(text: Binding<String>, placeholder: String, characterLimit: Int) {
         self._text = text
         self.placeholder = placeholder
